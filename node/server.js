@@ -30,10 +30,10 @@ var jsonParser = bodyParser.json()
 var tweets = []
 
 app.get('/', function(req, res) {
-  //res.send('Welcome to Node Twitter')
+  res.send('Welcome to Node Twitter')
   
   //gives 404 error not found:
-  res.sendFile('/index.html')
+  //res.sendFile('/index.html')
 })
 
 app.post('/send', jsonParser, function(req, res) {

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+<head>
+
+<meta charset = "UTF-8" />
+
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<title>Home control</title>
+
+<style>
+
+.lamp1 {
+	font-size: 20px;
+}
+#lamp1Image {
+	width: 20px;
+	height: 20px;
+}
+#lamp1Dim {
+	width: 250px;
+	height: 50px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+	<h1> Ole Bauck's <b>Light Control</b></h1>
+
+	<img id="lamp1Image" src="img/bulb_off.jpg" alt="bulb" usemap="#bulbmap" float="left">
+
+	<map name="bulbmap">
+		<area shape="rect" coords="0,0,10,20" alt="left side" onclick="lamp1Toggle()" style="cursor: pointer">
+	</map>
+
+	<button class="lamp1" type="button" onclick="lamp1On()" float="left">
+		LIGHT ON
+	</button>
+
+	<button class="lamp1" type="button" onclick="lamp1Off()" float="left">
+		LIGHT OFF
+	</button>
+
+	<input type="range" id="lamp1Dim" value="32" min="0" max="63" oninput="lamp1Dim()">
+	<span id="dimVal">0</span>
+	
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="scripts/Client.js"></script>
+
+</body>
+
+</html>
